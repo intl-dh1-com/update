@@ -1,0 +1,998 @@
+@font-face {
+  font-family: DHLDelivery_Regular;
+  src: url("../fonts/Delivery_W_Rg.woff");
+}
+@font-face {
+  font-family: DHLDelivery_Black_Condensed;
+  src: url("../fonts/Delivery_W_CdBlk.woff");
+}
+@font-face {
+  font-family: DHLDelivery_Bold;
+  src: url("../fonts/Delivery_W_Bd.woff");
+}
+body {
+  font-family: DHLDelivery_Regular;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  color: rgba(0, 0, 0, 0.9);
+  /* Because of the sticky footer */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* Avoid the IE 10-11 `min-height` bug. */
+}
+
+.login-pf body {
+  background: url("background-pic.jpg") no-repeat right top fixed;
+  background-size: cover;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-width: 1280px) {
+  .login-pf body {
+    background-image: url("background-pic.jpg");
+  }
+}
+@media all and (-webkit-min-device-pixel-ratio: 2.5), all and (-o-min-device-pixel-ratio: 5 / 2), all and (min--moz-device-pixel-ratio: 2.5), all and (min-device-pixel-ratio: 2.5), all and (min-width: 2800px) {
+  .login-pf body {
+    background-image: url("background-pic.jpg");
+  }
+}
+.login-pf-page .login-pf-header {
+  font-size: 14px;
+}
+
+.login-pf-page .login-pf-header h1,
+#kc-page-title {
+  font-size: 30px;
+  font-weight: 300;
+  text-align: left;
+  margin: 0 0 5px;
+}
+
+#kc-page-title div {
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+#kc-header {
+  margin-bottom: 20px;
+}
+
+.bottom-split {
+  margin-bottom: 0px;
+}
+
+input:-webkit-autofill ~ label {
+  transform: translate(0, 10px) scale(0.9) !important;
+  opacity: 0.6 !important;
+  font-size: 11px !important;
+  font-weight: normal !important;
+  padding-left: 12px !important;
+}
+
+#kc-content-wrapper form #kc-form-options {
+  margin-top: 10px;
+}
+#kc-content-wrapper form #kc-form-buttons {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+#kc-content-wrapper form:invalid #kc-form-buttons input {
+  pointer-events: none;
+  opacity: 0.5;
+}
+#kc-content-wrapper form div.form-group {
+  position: relative;
+  margin-top: 0px;
+  margin-bottom: 0px;
+    /*
+    The validation icon was removed from designs but leaving it here, it can change again any time.
+    &.invalid .input:after {
+      content: url(input-err.jpg);
+      position: absolute;
+      right: 30px;
+      top: 10px;
+    }
+*/
+}
+#kc-content-wrapper form div.form-group.text-fields label {
+  position: absolute;
+  top: -7px;
+  left: 0;
+  opacity: 0.6;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  color: rgba(0, 0, 0, 0.9);
+  padding-left: 12px;
+  transform-origin: top left;
+  transform: translate(0, 13px) scale(1);
+  transition: all 0.1s ease-in-out;
+  width: 100%;
+  text-align: left;
+}
+#kc-content-wrapper form div.form-group.text-fields.active label {
+  transform: translate(0, 10px) scale(0.9) !important;
+  opacity: 0.6 !important;
+  font-size: 11px !important;
+  font-weight: normal !important;
+  padding-left: 12px !important;
+}
+#kc-content-wrapper form div.form-group.text-fields input {
+  width: 100%;
+  height: 56px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.9);
+  border-radius: 0px;
+  border: solid 1px rgba(0, 0, 0, 0.45);
+  border-bottom-width: 0px;
+  background-color: #ffffff;
+  outline: 0;
+  padding: 4px 10px;
+}
+#kc-content-wrapper form div.form-group.text-fields input.input-password {
+  padding: 4px 38px 4px 10px;
+}
+#kc-content-wrapper form div.form-group.text-fields.radius-form-group-first input {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+#kc-content-wrapper form div.form-group.text-fields.radius-form-group-last input {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-width: 1px;
+  margin-bottom: 15px;
+}
+#kc-content-wrapper form div.form-group.text-fields.radius-form-group-first input:focus {
+  border: solid 2px rgba(0, 0, 0, 0.75);
+}
+#kc-content-wrapper form div.form-group.text-fields.radius-form-group-last input:focus {
+  border: solid 2px rgba(0, 0, 0, 0.75);
+}
+#kc-content-wrapper form div.form-group.disabled label {
+  font-size: 11px;
+  transform: translate(0, 8px) scale(0.9);
+  color: rgba(0, 0, 0, 0.24);
+}
+#kc-content-wrapper form div.form-group.disabled input {
+  border-color: rgba(0, 0, 0, 0.24);
+  color: rgba(0, 0, 0, 0.24);
+}
+#kc-content-wrapper form div.form-group:not(.disabled) + .disabled input {
+  border-top: solid 1px rgba(0, 0, 0, 0.45);
+}
+
+.alert {
+  border-width: 0px;
+  padding-left: 28px;
+}
+.alert > .pficon {
+  left: 0px;
+}
+
+label.checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  font-weight: normal;
+  /* Create a custom checkbox */
+  /* On mouse-over, add a grey background color */
+  /* When the checkbox is checked, add a blue background */
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */
+}
+label.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+label.checkbox .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: solid 1px rgba(0, 0, 0, 0.45);
+  background-color: #fff;
+}
+label.checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+label.checkbox input:checked ~ .checkmark {
+  background-color: #fff;
+}
+label.checkbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+label.checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+label.checkbox .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #000;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.form-links {
+  text-align: center;
+}
+.form-links a,
+.form-links a:hover {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.alert-error {
+  background-color: #ffffff;
+  border-color: #cc0000;
+  color: #333333;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  bottom: 10px;
+}
+
+.kc-feedback-text {
+  vertical-align: middle;
+}
+
+#kc-locale ul {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  list-style: none;
+  right: 0;
+  bottom: 20px;
+  min-width: 100px;
+  padding: 2px 0;
+  border: solid 1px #bbb;
+  max-height: 400px;
+  /* temporary fix to prevent too long list from breaking the page (selector is to be moved to footer later) */
+  overflow-y: auto;
+}
+
+#kc-locale:hover ul {
+  display: block;
+  margin: 0;
+}
+
+#kc-locale ul li a {
+  display: block;
+  padding: 5px 14px;
+  color: #000 !important;
+  text-decoration: none;
+  line-height: 20px;
+}
+
+#kc-locale ul li a:hover {
+  color: #4d5258;
+  background-color: #d4edfa;
+}
+
+#kc-locale-dropdown a {
+  color: #4d5258;
+  background: 0 0;
+  padding: 0 15px 0 0;
+  font-weight: 300;
+}
+
+#kc-locale-dropdown a:hover {
+  text-decoration: none;
+}
+
+a#kc-current-locale-link {
+  display: block;
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+/* a#kc-current-locale-link:hover {
+    background-color: rgba(0,0,0,0.2);
+} */
+a#kc-current-locale-link::after {
+  content: "\2c5";
+  margin-left: 4px;
+}
+
+.login-pf .container {
+  padding-top: 40px;
+}
+
+#kc-logo {
+  width: 100%;
+}
+
+#kc-logo-wrapper {
+  background-image: url(keycloak-logo-2.png);
+  background-repeat: no-repeat;
+  height: 63px;
+  width: 300px;
+  margin: 62px auto 0;
+}
+
+div.kc-logo-text {
+  background-image: url(dhl-logo.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 128px;
+  height: 17px;
+  margin: 16px;
+}
+
+div.kc-logo-text span {
+  display: none;
+}
+
+.kc-form-title {
+  font-family: DHLDelivery_Black_Condensed;
+  font-weight: 900;
+  font-size: 20px;
+  font-stretch: condensed;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+}
+
+#kc-header {
+  /*color: #ededed;*/
+  overflow: visible;
+  white-space: nowrap;
+  height: 64px;
+  background-image: linear-gradient(to right, #ffcc00, #ffcc00 30%, #ffe57f 79%, #fff0b2);
+}
+
+/*Put font-size: 0px; to get rid of Realm name*/
+#kc-header-wrapper {
+  /*font-size: 0px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 1.2em;*/
+  padding: 7px 8px;
+}
+
+.kc-contact-link {
+  margin-right: 24px;
+  margin-top: 14px;
+  color: black;
+}
+
+.kc-inline-icon {
+  margin-bottom: 2px;
+  margin-left: 2px;
+  width: 9px;
+  height: 9px;
+}
+
+#kc-header-wrapper .btn {
+  text-align: center;
+  color: #d40511;
+  border-radius: 3px;
+  border: solid 1px #d40511;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 5px 12px;
+}
+
+#kc-content {
+  width: 100%;
+}
+
+#kc-info-wrapper {
+  font-size: 13px;
+}
+
+#kc-form-options span {
+  display: block;
+}
+
+#kc-form-options a,
+#kc-forgot-password-button a {
+  border-bottom: 1px solid black;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+#kc-form-options .checkbox {
+  margin-top: 0;
+  color: #72767b;
+}
+
+#kc-terms-text {
+  margin-bottom: 20px;
+}
+
+#kc-registration {
+  margin-bottom: 15px;
+}
+
+/* TOTP */
+ol#kc-totp-settings {
+  margin: 0;
+  padding-left: 20px;
+}
+
+ul#kc-totp-supported-apps {
+  margin-bottom: 10px;
+}
+
+#kc-totp-secret-qr-code {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+#kc-totp-secret-key {
+  background-color: #fff;
+  color: #333333;
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+/* OAuth */
+#kc-oauth h3 {
+  margin-top: 0;
+}
+
+#kc-oauth ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#kc-oauth ul li {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 12px;
+  padding: 10px 0;
+}
+
+#kc-oauth ul li:first-of-type {
+  border-top: 0;
+}
+
+#kc-oauth .kc-role {
+  display: inline-block;
+  width: 50%;
+}
+
+/* Code */
+#kc-code textarea {
+  width: 100%;
+  height: 8em;
+}
+
+/* Social */
+#kc-social-providers ul {
+  padding: 0;
+}
+
+#kc-social-providers li {
+  display: block;
+}
+
+#kc-social-providers li:first-of-type {
+  margin-top: 0;
+}
+
+.termscondition .login-pf-page .card-pf {
+  /*margin-left: 15%;
+  margin-right: 15%;*/
+  max-width: 100%;
+  padding: 0px;
+}
+.termscondition .login-pf-page .card-pf .login-pf-header {
+  padding: 20px 40px;
+  margin: 0px;
+}
+.termscondition .login-pf-page .card-pf .form-actions {
+  text-align: center;
+  padding: 20px 40px;
+}
+.termscondition .login-pf-page .card-pf .form-actions .btn {
+  width: 200px;
+  float: none;
+}
+.termscondition .login-pf-page .card-pf #kc-terms-text {
+  background-color: #f1f1f1;
+  padding: 20px 40px;
+  overflow: auto;
+  min-height: 200px;
+}
+.termscondition .login-pf-page .card-pf #kc-terms-text::-webkit-scrollbar {
+  width: 7px;
+}
+.termscondition .login-pf-page .card-pf #kc-terms-text::-webkit-scrollbar-track {
+  border-radius: 7px;
+}
+.termscondition .login-pf-page .card-pf #kc-terms-text::-webkit-scrollbar-thumb {
+  border-radius: 7px;
+  -webkit-box-shadow: inset 0 0 4px #ccc;
+  border: 3px solid rgba(0, 0, 0, 0);
+  background-color: #ccc;
+}
+.termscondition .login-pf-page .card-pf .form-actions {
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  #kc-container-wrapper {
+    position: absolute;
+    width: 100%;
+  }
+
+  .login-pf .container {
+    padding-right: 80px;
+  }
+
+  #kc-locale {
+    position: relative;
+    text-align: right;
+    z-index: 9999;
+  }
+}
+@media (max-width: 767px) {
+  .login-pf body {
+    background: white;
+  }
+
+  #kc-header {
+    padding-left: 15px;
+    padding-right: 15px;
+    float: none;
+    text-align: left;
+  }
+
+  #kc-header-wrapper {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 20px 60px 0 0;
+    color: #72767b;
+    letter-spacing: 0;
+  }
+
+  div.kc-logo-text {
+    margin: 0;
+    width: 150px;
+    height: 32px;
+    background-size: 100%;
+  }
+
+  #kc-form {
+    float: none;
+  }
+
+  #kc-info-wrapper {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 15px;
+    padding-top: 15px;
+    padding-left: 0px;
+    padding-right: 15px;
+  }
+
+  #kc-social-providers li {
+    display: block;
+    margin-right: 5px;
+  }
+
+  .login-pf .container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  #kc-locale {
+    position: absolute;
+    width: 200px;
+    top: 20px;
+    right: 20px;
+    text-align: right;
+    z-index: 9999;
+  }
+
+  #kc-logo-wrapper {
+    background-size: 100px 21px;
+    height: 21px;
+    width: 100px;
+    margin: 20px 0 0 20px;
+  }
+}
+@media (min-height: 646px) {
+  #kc-container-wrapper {
+    bottom: 12%;
+  }
+}
+@media (max-height: 645px) {
+  #kc-container-wrapper {
+    padding-top: 50px;
+    top: 20%;
+  }
+}
+.card-pf form.form-actions .btn {
+  float: right;
+  margin-left: 10px;
+}
+
+#kc-form-buttons {
+  width: 100%;
+  margin: 0 0 40px;
+}
+
+.login-pf-page .login-pf-brand {
+  margin-top: 20px;
+  max-width: 360px;
+  width: 80%;
+}
+
+.login-pf-page .card-pf {
+  background: #fff;
+  padding: 0 20px;
+  width: 368px;
+  /*max-height: 475px;*/
+  border-top: 0;
+  box-shadow: 0 0 0;
+}
+
+.login-pf-page .login-pf-accounts {
+  max-width: 840px;
+}
+
+/*tablet*/
+@media (max-width: 840px) {
+  .login-pf-page .card-pf {
+    /*max-width: none;*/
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px 20px 30px 20px;
+  }
+}
+@media (max-width: 767px) {
+  .login-pf-page .card-pf {
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0;
+  }
+
+  .card-pf.login-pf-accounts {
+    max-width: none;
+  }
+}
+.login-pf-page .login-pf-signup {
+  font-size: 15px;
+  color: #72767b;
+}
+
+#kc-content-wrapper .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (min-width: 768px) {
+  .login-pf-page .card-pf {
+    padding: 20px 40px 0px 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+  }
+
+  .login-pf-page .login-pf-social-section:first-of-type {
+    padding-right: 39px;
+    border-right: 1px solid #d1d1d1;
+    margin-right: -1px;
+  }
+
+  .login-pf-page .login-pf-social-section:last-of-type {
+    padding-left: 40px;
+  }
+
+  .login-pf-page .login-pf-social-section .login-pf-social-link:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .termscondition .login-pf-page .card-pf {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+.alert > .pficon {
+  position: relative;
+  top: 0;
+  left: 0;
+  vertical-align: middle;
+}
+
+#employee-notification {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+*[data-dhl-employee="show"] {
+  display: none;
+  padding-bottom: 30px !important;
+}
+
+.login-pf-settings.active #employee-notification[data-dhl-employee="show"] {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.login-pf-page .login-pf-social-link {
+  margin-bottom: 25px;
+}
+
+.login-pf-page .login-pf-social-link a {
+  padding: 2px 0;
+}
+
+.login-pf-page.login-pf-page-accounts {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-pf-page .btn-primary {
+  margin-top: 0;
+}
+
+input[type="submit"],
+.btn-submit {
+  border-radius: 4px;
+  border-color: #d40511;
+  background-color: #d40511;
+  background-image: none;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  height: 56px;
+  width: 100%;
+}
+input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active, input[type="submit"]:active:hover, input[type="submit"]:active:focus,
+.btn-submit:hover,
+.btn-submit:focus,
+.btn-submit:active,
+.btn-submit:active:hover,
+.btn-submit:active:focus {
+  border-radius: 4px;
+  border-color: #d40511;
+  background-color: #d40511;
+  background-image: none;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  height: 56px;
+}
+
+.btn-submit {
+  display: table;
+}
+.btn-submit span {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.list-inline.wrappable {
+  font-size: 14px;
+}
+
+.footer-top,
+.footer-bottom {
+  width: 100%;
+}
+
+.footer-top > ul {
+  margin-bottom: 20px;
+}
+
+.footer-bottom .title {
+  padding-left: 30px;
+}
+
+.kc-reset-password-buttons {
+  margin-top: 10px !important;
+  margin-bottom: 24px !important;
+}
+
+.right {
+  float: right;
+}
+
+.footer {
+  flex-shrink: 0;
+  /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+  min-height: 124px;
+  height: 124px;
+  background: #f1f1f1;
+  display: table;
+  padding: 0 18px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+.footer .footer-top > ul {
+  margin-top: 32px;
+}
+.footer > div ul {
+  display: block;
+}
+.footer > div ul li {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+.footer > div ul li a,
+.footer > div ul li a:hover {
+  font-weight: normal;
+  color: rgba(102, 102, 102, 0.9);
+}
+.footer > div ul li.copyright {
+  font-weight: normal;
+  color: rgba(102, 102, 102, 0.9);
+}
+
+@media (max-width: 767px) {
+  ul.wrappable > li {
+    display: list-item;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+  }
+  ul.wrappable > li ul {
+    padding: 0;
+  }
+
+  .kc-form-title {
+    font-size: 27px;
+  }
+
+  .footer {
+    font-size: 16px;
+    background: #fff;
+    padding-bottom: 70px;
+    position: relative;
+  }
+
+  .footer > div ul li {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .list-inline.wrappable {
+    font-size: 16px;
+  }
+
+  .login-pf-page .card-pf {
+    width: 100%;
+  }
+
+  li.copyright {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+.login-pf-page .login-pf-header {
+  margin-bottom: 0px !important;
+}
+
+.kc-icon-status-error {
+  background: url("icons/cancel-circle.svg") no-repeat center center;
+}
+
+.kc-icon-status-success {
+  background: url("icons/checkmark-circle.svg") no-repeat center center;
+}
+
+.kc-icon-status-warning {
+  background: url("icons/minus-circle.svg") no-repeat center center;
+}
+
+.kc-icon-status-info {
+  background: url("icons/information.svg") no-repeat center center;
+}
+
+.kc-icon-status {
+  display: inline-block;
+  vertical-align: middle;
+  height: 16px;
+  width: 16px;
+  background-size: contain;
+}
+
+.show-hide-password {
+  position: absolute;
+  right: 16px;
+  top: 18px;
+  opacity: 0.4;
+}
+.show-hide-password.active {
+  opacity: 0.8;
+}
+.show-hide-password:hover, .show-hide-password:focus {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.show-hide-password > img {
+  width: 20px;
+}
+
+#reset-password-alert-error {
+  display: none;
+}
+
+.kc-form-login {
+  font-size: 16px;
+}
+
+.footer ul .title {
+  font-family: DHLDelivery_Bold !important;
+  font-weight: bold !important;
+}
+
+.submit-update-password-wrapper {
+  margin-bottom: 20px !important;
+}
+
+.login-pf-page {
+  padding-top: 0 !important;
+}
+
+.zocial,
+a.zocial {
+  width: 100%;
+  font-weight: normal;
+  font-size: 14px;
+  text-shadow: none;
+  border: 0;
+  background: #f5f5f5;
+  color: #72767b;
+  border-radius: 0;
+  white-space: normal;
+}
+
+.zocial {
+  /* Copy of zocial windows classes to be used for microsoft's social provider button */
+}
+.zocial:before {
+  border-right: 0;
+  margin-right: 0;
+}
+.zocial:hover {
+  background: #ededed !important;
+}
+.zocial span:before {
+  padding: 7px 10px;
+  font-size: 14px;
+}
+.zocial .facebook, .zocial .github, .zocial .google, .zocial .microsoft, .zocial .stackoverflow, .zocial .linkedin, .zocial .twitter {
+  background-image: none;
+  border: 0;
+  box-shadow: none;
+  text-shadow: none;
+}
+.zocial.microsoft:before {
+  content: "\f15d";
+}
+.zocial.stackoverflow:before {
+  color: inherit;
+}
+
+/*# sourceMappingURL=styles.css.map */
